@@ -1,6 +1,6 @@
 # Get Shit Done Rails Version
 
-Thanks for trying out Get Shit Done (Rails Version)! We promise your rails app will look awesome after install it. You can view live preview [here](http://uiready.io/items/get-shit-done-rails-version/demo).
+Thanks for trying out Get Shit Done (Rails Version)! We promise your rails app will look awesome after installing it. You can view live preview [here](http://uiready.io/items/get-shit-done-rails-version/demo).
 
 [![Get Shit Done](https://raw.githubusercontent.com/UiReady/uiready.github.io/master/images/gsdk_rails_cover.jpg)](https://uiready.io/items/get-shit-done-rails-version)
 
@@ -17,11 +17,11 @@ Thanks for trying out Get Shit Done (Rails Version)! We promise your rails app w
 
 Recommend install on blank new rails app
 
-Although Get Shit Done (Rails Version) can be installed on your existing rails app, we still recommend you to install it on a blank new rails app first and get familiar how this gem integrate your rails app.
+Although Get Shit Done (Rails Version) can be installed on your existing rails app, we still recommend you to install it on a blank new rails app first and get familiar with how this gem integrates with your rails app.
 
 Remove any bootstrap from existing rails app
 
-If you want to integrate existing rails app, please make sure you have remove all the Bootstrap gems such as [twitter-bootstrap-rails](https://github.com/seyhunak/twitter-bootstrap-rails), [bootstrap-rails](https://github.com/anjlab/bootstrap-rails), [bootstrap-sass](https://github.com/twbs/bootstrap-sass), [less-rails-bootstrap](https://github.com/metaskills/less-rails-bootstrap) or any Bootstrap related stylesheets and javascript from your rails app. As Get Shit Done (Rails Version) already contain its own version of Bootstrap.
+If you want to integrate existing rails app, please make sure you have removed all the Bootstrap gems such as [twitter-bootstrap-rails](https://github.com/seyhunak/twitter-bootstrap-rails), [bootstrap-rails](https://github.com/anjlab/bootstrap-rails), [bootstrap-sass](https://github.com/twbs/bootstrap-sass), [less-rails-bootstrap](https://github.com/metaskills/less-rails-bootstrap) or any Bootstrap related stylesheets and javascript from your rails app. As Get Shit Done (Rails Version) already contains its own version of Bootstrap.
 
 [Back to top](#table-of-content)
 
@@ -46,15 +46,16 @@ If you want to integrate existing rails app, please make sure you have remove al
   bundle install
   ```
 
-  Congratulation, Get Shit Done for Rails Version has been installed in your local machine.
+  Congratulation, Get Shit Done for Rails Version has been installed on your local machine.
 
 3. Run the install generator to integrate Get Shit Done in your rails
+   app
 
   ```
   rails g gsdk:install
   ```
 
-  The install generator will created the following layout, css and js files in your app:
+  The install generator will create the following layout, css and js files in your app:
 
   * app/views/layouts/_base.html.erb
   * app/assets/stylesheets/gsdk.css
@@ -69,15 +70,15 @@ If you want to integrate existing rails app, please make sure you have remove al
 
 ## Theme Structure In Rails
 
-Get Shit Done (Rails version) has integrate lot of the rails best practices such as
+Get Shit Done (Rails version) has integrated a lot of the rails best practices such as
 
 * integrate nicely with turbolinks enabled
 * dynamic load the javascript init scripts
 * proper asset pipeline integration
 
-Before we dive in to using Page Generators. Let get familiar how this gem integrate to rails app
+Before we dive in to using Page Generators. Lets get familiar with how this gem integrates with your rails app
 
-First thing first, in order to simplify the file management from your rails app, all the Get Shit Done files are actually located in the gem except the following files for customize purpose:
+First things first, in order to simplify the file management from your rails app, all the Get Shit Done files are actually located in the gem except the following files for customize purpose:
 
 Get Shit Done files in your rails app folder:
 
@@ -87,7 +88,7 @@ Get Shit Done files in your rails app folder:
 
 ### _BASE.HTML.ERB
 
-It contain html head and empty body. All other layouts are based on this _base.html.erb layout so that same html head setting can be reuse among different layouts.
+It contains html head and empty body. All other layouts are based on this _base.html.erb layout so that the same html head setting can be reused among different layouts.
 
 There are three yield contents specified in base layout:
 
@@ -99,7 +100,7 @@ There are three yield contents specified in base layout:
 
 #### <%= yield :style %>
 
-you can specify the custom css style content from the view file to fill in this area. For example, if you want to include some style on index view page only. From your index.html.erb, you can specify:
+You can specify the custom css style content from the view file to fill in this area. For example, if you want to include some style on index view page only. From your index.html.erb, you can specify:
 
 ```ruby
 <% content_for :style do %>
@@ -113,7 +114,7 @@ you can specify the custom css style content from the view file to fill in this 
 
 #### <%= yield :features %>
 
-you can specify the javascript init features you want to invoke from the view file to fill in this area. For example, if you want to add feature1 and feature2 on index view page only. From your index.html.erb, you can specify:
+You can specify the javascript init features you want to invoke from the view file to fill in this area. For example, if you want to add feature1 and feature2 on index view page only. From your index.html.erb, you can specify:
 
 ```ruby
 <% content_for :features, "feature1 feature2" %>
@@ -134,7 +135,7 @@ $(document).on("page:change", function() {
 
 #### <%= yield :class %>
 
-you can specify the css class name from the view file to fill in this area. For example, if you want to give the class name on index view page only. From your index.html.erb, you can specify:
+You can specify the css class name from the view file to fill in this area. For example, if you want to give the class name on index view page only. From your index.html.erb, you can specify:
 
 ```ruby
 <% content_for :class, "home" %>
@@ -153,7 +154,7 @@ It is the manifest file using sprockets require directives to require all Get Sh
 
 ## Page Generators
 
-Get Shit Done come with the following page generators to help you create the various pages. It's automatically handle all setup such as routes, controllers and views. By the way, all view layout are based on `_base.html.erb` layout, if you want to use different layout, you can specify it in your controller.
+Get Shit Done comes with the following page generators to help you create the various pages. It automatically handles all setup such as routes, controllers and views. By the way, all view layouts are based on `_base.html.erb` layout, if you want to use a different layout, you can specify it in your controller.
 
 ### COMPONENTS GENERATOR
 
